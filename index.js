@@ -1,26 +1,35 @@
-import { generateRandomNumber } from './randomNumber.js';
-import { checkGuess } from './checkGuess.js';
+const notas = []
 
-function startGame() {
-    let tentativasMax = 10;
-    const correctNumber = generateRandomNumber(1, 100);
-    
+notas[0] = 10
+notas[1] = 8
+notas[2] = 6.5
+notas[3] = 9
+notas[4] = 7
 
-    while (tentativasMax > 0) {
-        let playerGuess = parseInt(prompt("Adivinhe o número (entre 1 e 100):"));
-        let result = checkGuess(playerGuess, correctNumber);
+console.log(notas)
 
-        console.log(result);
+console.log("primeira e ultima:", + notas[0],"e",+ notas[4])
+console.log(notas.push(5))
+console.log(notas.shift())
+console.log(notas)
 
-        if (result === "Parabéns! Você adivinhou o número!") {
-            break;
-        }
+let result = ''
+for (const index in notas) { 
+    result += notas[index] + ' ';
+} 
+console.log(result);
 
-        tentativasMax -= 1;
-        if (tentativasMax === 0) {
-            console.log("Você perdeu! O número era " + correctNumber);
-        }
-    }
-}
+const media = notas.reduce((soma,nota)=>soma+nota,0)/notas.length;
+console.log("media das notas: ", media)
 
-startGame();
+const acima = notas.filter(nota =>nota > 7);
+console.log("notas acima de 7: ", acima)
+
+notas.sort((a,b)=> a-b);
+console.log("notas em ordem crescente", notas)
+
+const notaseis = notas.includes(6.5);
+console.log(notaseis)
+
+const indexoito = notas.indexOf(8);
+console.log("indece da nota 8: ", indexoito)
