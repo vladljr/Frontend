@@ -1,0 +1,32 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.completo {
+    text-decoration: line-through;
+}
+
+.mais-urgente {
+    background-color: #ffdddd;
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Afacad Flux', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 200;
+    background-color: hotpink;
+}

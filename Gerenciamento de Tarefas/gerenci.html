@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="gerenc.css">
+</head>
+<body>
+    <form id="FormTarefas">
+        <p> Bem-vindo ao gerenciamento de tarefas! </p>
+        <br>
+        <label for="NomeTarefa">Nome da Tarefa: </label>
+        <input type="text" id="NomeTarefa" placeholder="Qual o nome da tarefa?">
+
+        <br>
+
+        <label for="DataConclusao">Data de Conclusão: </label>
+        <input type="date" id="DataConclusao" placeholder="Qual a data de conclusão?">
+
+        <br>
+
+        <button type="submit">Adicionar tarefa</button>
+
+        <br>
+        <br>
+
+        <input type="text" id="novaTarefa" placeholder="Digite uma nova tarefa">
+        <button onclick="adicionarTarefa()">Adicionar</button>
+
+        <ul id="ListaTarefas"></ul>
+
+        <button id="filtrocompleto">Tarefas Concluídas</button>
+        <button id="filtropendentes">Tarefas Pendentes</button>
+        <button onclick="filtrarTarefas()">Filtrar Concluídas</button>
+
+        <div id="editarForm" style="display: none;">
+            <input type="text" id="editarTarefa" placeholder="Editar tarefa">
+            <select id="editar-prioridade">
+                <option value="alta">Alta</option>
+                <option value="média">Média</option>
+                <option value="baixa">Baixa</option>
+            </select>
+            <input type="date" id="editarDataConclusao">
+            <button onclick="salvarEdit()">Salvar edição</button>
+        </div>
+    </form>
+    <script src="gerenc.js"></script>
+</body>
+</html>
